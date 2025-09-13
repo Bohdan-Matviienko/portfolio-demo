@@ -1,26 +1,18 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+/* Base theme tokens */
+:root { --bg: 255 255 255; --fg: 15 23 42; }
+html, body { height: 100%; }
+body { color: rgb(var(--fg)); background: rgb(var(--bg)); }
+a { text-decoration: none; }
+.container { max-width: 72rem; margin-inline: auto; padding-inline: 1rem; }
+.section { padding-block: 4rem; }
+.h1 { font-size: clamp(2rem, 3vw + 1rem, 3.25rem); font-weight: 800; line-height: 1.1; }
+.h2 { font-size: clamp(1.5rem, 2vw + .75rem, 2.25rem); font-weight: 700; line-height: 1.15; }
+.lead { font-size: 1.125rem; opacity: .85; }
+.card { border: 1px solid #e5e7eb; border-radius: 1rem; padding: 1rem; }
+.btn { display: inline-flex; align-items: center; gap: .5rem; border-radius: .75rem; border: 1px solid #111827; padding: .6rem 1rem; font-weight: 600; }
+.btn-ghost { border-color: #e5e7eb; }
+.grid-auto { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }

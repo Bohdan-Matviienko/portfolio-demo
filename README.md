@@ -1,36 +1,24 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Universal Demo Site — Next.js + Tailwind (App Router)
 
-## Getting Started
+Демо-сайт для портфоліо: **лендінг**, **блог**, **каталог послуг**, **контактна форма** та сторінка **Hire me**.
+Проєкт показує мої навички створення сучасних сайтів під ключ: структура, UI, динамічні маршрути, простий бекенд для форм, SEO/OG, деплой.
 
-First, run the development server:
+## ✨ Фічі
+- Next.js (App Router), TypeScript, Tailwind CSS
+- Сторінки: `/` (лендінг), `/blog`, `/blog/[slug]`, `/shop`, `/shop/[slug]`, `/contact`, `/hire`
+- API-роут: `POST /api/contact` (лог повідомлень у консолі)
+- SEO: `app/opengraph-image.tsx` генерує OG-картинку на льоту
+- `robots.txt` та `sitemap.xml`
+- Готово до деплою на Vercel (з аналітикою)
 
+## 🧰 Стек
+- **Next.js 15 (App Router)**
+- **TypeScript**
+- **Tailwind CSS**
+- **Vercel** (деплой, логи, аналітика)
+
+## 🚀 Швидкий старт
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# http://localhost:3000
