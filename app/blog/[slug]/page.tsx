@@ -1,12 +1,14 @@
+// app/blog/[slug]/page.tsx
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { posts } from "@/lib/posts";
 
-export function generateMetadata(
-  { params }: { params: { slug: string } }
-): Metadata {
-  const post = posts.find((p) => p.slug === params.slug);
+export async function generateMetadata(
+  { params }: { params: Promise<{ slug: string }> }
+): Promise<Metadata> {
+  const { slug } = await params;
+  const post = posts.find((p) => p.slug === slug);
   if (!post) return { title: "Пост не знайдено" };
   const desc = post.excerpt ?? post.content.slice(0, 140);
   return {
@@ -16,10 +18,11 @@ export function generateMetadata(
   };
 }
 
-export default function PostPage(
-  { params }: { params: { slug: string } }
+export default async function PostPage(
+  { params }: { params: Promise<{ slug: string }> }
 ) {
-  const post = posts.find((p) => p.slug === params.slug);
+  const { slug } = await params;
+  const post = posts.find((p) => p.slug === slug);
   if (!post) return notFound();
 
   return (
